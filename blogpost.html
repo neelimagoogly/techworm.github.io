@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>TechWorm</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="index.html">
+              <span><img src="img/worm2.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="search.html" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    
+    <div class="m-auto blog-post-content max-width-2 m-auto my-2">
+        <h1 class="font1">QuackChat – Creating a Real Time Chat App</h1>
+        <div class="blogpost-meta">
+            <div class="author-info">
+                <div>
+                <b>
+                  Author - Neelima Mohanty
+                </b>
+                </div>
+                <div>10/01/2022 | 10:30 PM</div>
+            </div>
+            <div class="social">
+                <svg width="29" height="29" class="hk"><path d="M22.05 7.54a4.47 4.47 0 0 0-3.3-1.46 4.53 4.53 0 0 0-4.53 4.53c0 .35.04.7.08 1.05A12.9 12.9 0 0 1 5 6.89a5.1 5.1 0 0 0-.65 2.26c.03 1.6.83 2.99 2.02 3.79a4.3 4.3 0 0 1-2.02-.57v.08a4.55 4.55 0 0 0 3.63 4.44c-.4.08-.8.13-1.21.16l-.81-.08a4.54 4.54 0 0 0 4.2 3.15 9.56 9.56 0 0 1-5.66 1.94l-1.05-.08c2 1.27 4.38 2.02 6.94 2.02 8.3 0 12.86-6.9 12.84-12.85.02-.24 0-.43 0-.65a8.68 8.68 0 0 0 2.26-2.34c-.82.38-1.7.62-2.6.72a4.37 4.37 0 0 0 1.95-2.51c-.84.53-1.81.9-2.83 1.13z"></path></svg>
+
+                <svg style="background: black;
+                border-radius: 21px;" width="29" height="29" viewBox="0 0 29 29" fill="none" class="hk"><path d="M5 6.36C5 5.61 5.63 5 6.4 5h16.2c.77 0 1.4.61 1.4 1.36v16.28c0 .75-.63 1.36-1.4 1.36H6.4c-.77 0-1.4-.6-1.4-1.36V6.36z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.76 20.9v-8.57H7.89v8.58h2.87zm-1.44-9.75c1 0 1.63-.65 1.63-1.48-.02-.84-.62-1.48-1.6-1.48-.99 0-1.63.64-1.63 1.48 0 .83.62 1.48 1.59 1.48h.01zM12.35 20.9h2.87v-4.79c0-.25.02-.5.1-.7.2-.5.67-1.04 1.46-1.04 1.04 0 1.46.8 1.46 1.95v4.59h2.87v-4.92c0-2.64-1.42-3.87-3.3-3.87-1.55 0-2.23.86-2.61 1.45h.02v-1.24h-2.87c.04.8 0 8.58 0 8.58z" fill="#fff"></path></svg>
+
+                <svg width="29" height="29" class="hk"><path d="M23.2 5H5.8a.8.8 0 0 0-.8.8V23.2c0 .44.35.8.8.8h9.3v-7.13h-2.38V13.9h2.38v-2.38c0-2.45 1.55-3.66 3.74-3.66 1.05 0 1.95.08 2.2.11v2.57h-1.5c-1.2 0-1.48.57-1.48 1.4v1.96h2.97l-.6 2.97h-2.37l.05 7.12h5.1a.8.8 0 0 0 .79-.8V5.8a.8.8 0 0 0-.8-.79"></path></svg>
+
+            </div>
+        </div>
+        <hr>
+        <div class="danger">
+          <p><strong>Note:</strong>The terms with * are explained in the Refference table</p>
+        </div>
+         <p class="font1">‘QuackChat’ is an online chatting room application which can be used by us to meet new friends all over the world and share knowledge and experience among us.</p>
+         <p class="font1">This app is build using Node.js* and Websockets*.Node.js is a JavaScript runtime* built on Chrome's V8 JavaScript engine.HTTP* is a first-class citizen in Node.js, designed with streaming* and low latency* in mind. This makes Node.js well suited for the foundation of a web library or framework.WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP* connection. The WebSocket API* is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server. With this API, we can send messages to a server and receive event-driven* responses without having to poll the server for a reply.
+            In this tutorial , we will learn to build a real time chat application.
+            </p>
+            <hr>
+            <hr>
+         <h2>Prerequisites</h2>
+         <p class="font1">Before following this tutorial, you need the following:</p>
+         <ul>•	Knowledge about basic web framework(HTML,CSS,Javascript)*.</ul>
+         <ul>•	Node.js*</ul>
+         <ul>•	Express*</ul>
+         <ul>•	Socket.io*</ul>
+         <ul>•	Nodemon*</ul>
+         <ul>•	Moment*</ul>
+         <hr>
+         <hr>
+         <h2>Setting up Project and Creating Express Server</h2>
+         <p class="font1">1.	Create the project directory and initialize the node project. Run this command on your terminal:<br>
+            mkdir Quack Chat && cd Quack Chat && npm init --y</p>
+            <hr>
+         <p class="font1">2.	Open your code editor, and run this command to install the dependencies:<br>
+            npm install express moment socket.io
+ </p>
+ <hr>
+         <p class="font1">3.	Then to install Nodemon as a dev dependency and run this command:<br>
+            npm install -D nodemon
+ </p>
+ <hr>
+         <p class="font1">4.	Add some scripts to the package.json file. Replace the properties of the script JSON* object with this code snippet:</p>
+         <img src="img/Picture1.png" alt="">
+         <hr>
+         <p class="font1">5.	Create an index.js file in the root directory. This will be the entry point of our app.<br>
+            Add these lines of code:
+            </p>
+            <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                // index.js<br>
+	
+
+	const express = require('express')<br>
+	
+
+	const app = express()<br>
+	const PORT = 8000 || process.env.PORT<br>
+	
+
+	app.listen(PORT, () => console.log(`App is live on port ${PORT}`))<br>
+
+            </div>  
+            <hr>
+         <p class="font1">6.	Then start your dev server with this command:<br>
+            npm run dev
+            </p>
+            <hr>
+            <hr>
+        <h2>Creating the frontend</h2>    
+        <p class="font1">1.	Set up your server to serve static assets such as HTML, CSS and JavaScript files. Modify index.js with the code snippet below:</p>
+        <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">// index.js<br>
+	
+
+            const path = require('path')<br>
+            
+        
+            app.use(express.static(path.join(__dirname, 'public')))
+        </div>
+        <hr>
+        <p class="font1">2.	Here, we will specify that we want to serve static assets from the public directory. Next, create the public directory directly within the project root.
+            Inside public directory, create an index.html file with the following content:
+            </p>
+            <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                <pre><code>&lt;!DOCTYPE html>
+                    &lt;html lang="en">
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8" />
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                            &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+                            &lt;link
+                                rel="stylesheet"
+                                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+                                integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+                                crossorigin="anonymous"
+                            />
+                            &lt;link rel="stylesheet" href="css/style.css" />
+                            &lt;title>QuackChat</title>
+                            &lt;/head>
+                            &lt;body>
+                            &lt;div class="join-container">
+                                &lt;header class="join-header">
+                                    
+                                  &lt;h1><i class="fa-solid fa-duck"></i>QuackChat</h1>
+                                &lt;/header>
+                                &lt;main class="join-main">
+                                   &lt;form action="chat.html">
+                                   &lt;div class="form-control">
+                                        &lt;label for="email">Email Address</label>
+                                            &lt;input
+                                                type="email"
+                                                name="email"
+                                                id="email"
+                                                placeholder="Enter email address..."
+                                                required
+                                            />
+                                        &lt;/div>
+                    
+                                        &lt;div class="form-control">
+                                            &lt;label for="username">Username</label>
+                                            &lt;input
+                                                type="text"
+                                                name="username"
+                                                id="username"
+                                                placeholder="Enter username..."
+                                                required
+                                            />
+                                        &lt;/div>
+                                        &lt;div class="form-control">
+                                            &lt;label for="room">Chat Channel</label>
+                                            &lt;select name="room" id="room">
+                                                &lt;option value="Business">Business </option>
+                                                &lt;option value="Technology">Technology</option>
+                                                &lt;option value="Sport">Sports</option>
+                                                &lt;option value="news">International News</option>
+                                                
+                                            &lt;/select>
+                                        &lt;/div>
+                                    &lt;div class="flex">
+                                &lt;button type="submit" class="btn">Login to Chat</button>
+                            &lt;/div>
+                            &lt;/form>
+                                &lt;/main>
+                            &lt;/div>
+                        &lt;/body>
+                    &lt;/html></code></pre>
+            
+            </div>
+            <p class="font1">Index.js file serves as the homepage/login screen to our chat application. To be begin chatting, users have to provide an email address, a username, and a room/channel they want to join.<br>
+                Inside css directory, create an style.css file</p>
+            <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');<br>
+
+:root {<br>
+	--dark-color-a: #32a8fb;<br>
+	--dark-color-b: rgb(62, 227, 205);<br>
+	--light-color: #43bad8;<br>
+	--success-color: #65ce65;<br>
+	--error-color: #df3832;<br>
+}<br>
+
+* {<br>
+	box-sizing: border-box;<br>
+	margin: 0;<br>
+	padding: 0;<br>
+}<br>
+
+body {<br>
+	font-family: 'Roboto', sans-serif;<br>
+	font-size: 16px;<br>
+	background: var(--light-color);<br>
+	margin: 20px;<br>
+}<br>
+
+ul {<br>
+	list-style: none;<br>
+}<br>
+
+a {<br>
+	text-decoration: none;<br>
+}<br>
+
+.btn {<br>
+	cursor: pointer;<br>
+	padding: 5px 15px;<br>
+	background: var(--light-color);<br>
+	color:rgb(113, 107, 226);<br>
+	border: 0;<br>
+	font-size: 17px;<br>
+    border-radius: 4px;<br>
+}<br>
+
+/* Chat Page */<br>
+
+.chat-container {<br>
+	max-width: 1100px;<br>
+	background: rgb(113, 107, 226);<br>
+	margin: 30px auto;<br>
+	overflow: hidden;<br>
+
+}<br>
+
+.chat-header {<br>
+	background: var(--dark-color-a);<br>
+	color: rgb(113, 107, 226);<br>
+	border-top-left-radius: 5px;<br>
+	border-top-right-radius: 5px;<br>
+	padding: 15px;<br>
+	display: flex;<br>
+	align-items: center;<br>
+	justify-content: space-between;<br>
+}<br>
+
+.chat-main {<br>
+	display: grid;<br>
+	grid-template-columns: 1fr 3fr;<br>
+}<br>
+
+.chat-sidebar {<br>
+	background: var(--dark-color-b);<br>
+	color:white;<br>
+	padding: 20px 20px 60px;<br>
+	overflow-y: scroll;<br>
+}<br>
+
+.chat-sidebar h2 {<br>
+	font-size: 20px;<br>
+	background: rgba(0, 0, 0, 0.1);<br>
+	padding: 10px;<br>
+	margin-bottom: 20px;<br>
+}<br>
+
+.chat-sidebar h3 {<br>
+	margin-bottom: 15px;<br>
+}<br>
+
+.chat-sidebar ul li {<br>
+	padding: 10px 0;<br>
+    border-top: .7px solid;<br>
+    border-bottom: .7px solid;<br>
+}<br>
+
+.chat-sidebar::-webkit-scrollbar {<br>
+    width: 1em;<br>
+}<br>
+
+ 
+.chat-sidebar::-webkit-scrollbar-track {<br>
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);<br>
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);<br>
+}<br>
+ 
+.chat-sidebar::-webkit-scrollbar-thumb {<br>
+  background-color: darkgrey;<br>
+  outline: 1px solid slategrey;<br>
+}<br>
+
+.chat-messages {<br>
+	padding: 30px;<br>
+	max-height: 500px;<br>
+	overflow-y: scroll;<br>
+    background-image: url('../img/chat-bg.jpg');<br>
+    background-position: center;<br>
+    background-size: contain;<br>
+    }<br>
+
+.chat-messages .message {<br>
+	padding: 10px;<br>
+	margin-bottom: 15px;<br>
+	background-color: var(--light-color);<br>
+	border-radius: 5px;<br>
+}<br>
+
+.chat-messages .message .meta {<br>
+	font-size: 15px;<br>
+	font-weight: bold;<br>
+	color: var(--dark-color-b);<br>
+	opacity: 0.7;<br>
+	margin-bottom: 7px;<br>
+    display: flex;<br>
+}<br>
+
+.chat-messages .message .meta span {<br>
+	color: #777;<br>
+    margin-left: auto;<br>
+}<br>
+
+.chat-form-container {<br>
+	padding: 20px 30px;<br>
+	background-color: var(--dark-color-a);<br>
+}<br>
+
+.chat-form-container form {<br>
+	display: flex;<br>
+}<br>
+
+.chat-form-container input[type='text'] {<br>
+	border-radius: 15px;<br>
+    border: none;<br>
+    font-size: 16px;<br>
+    padding: 10px;<br>
+    height: 40px;<br>
+    flex: 1;<br>
+    outline: none;<br>
+
+}<br>
+
+button.btn-plane {<br>
+    width: 50px;<br>
+    border-radius: 50px;<br>
+    border: none;<br>
+    background: none;<br>
+    cursor: pointer;<br>
+}<br>
+
+i.fas.fa-paper-plane{<br>
+    font-size: 1.5rem;<br>
+    color: white;<br>
+    outline: none;<br>
+}<br>
+
+/* Join Page */<br>
+.join-container {<br>
+	max-width: 500px;<br>
+	margin: 80px auto;<br>
+	color: #fff;<br>
+}<br>
+
+.join-header {<br>
+	text-align: center;<br>
+	padding: 20px;<br>
+	background: var(--dark-color-a);<br>
+	border-top-left-radius: 5px;<br>
+	border-top-right-radius: 5px;<br>
+}<br>
+
+.join-main {<br>
+	padding: 30px 40px;<br>
+	background: var(--dark-color-b);<br>
+    border-bottom-left-radius: 5px;<br>
+	border-bottom-right-radius: 5px;<br>
+}<br>
+
+.join-main p {<br>
+	margin-bottom: 20px;<br>
+}<br>
+
+.join-main .form-control {<br>
+	margin-bottom: 20px;<br>
+}<br>
+
+.join-main label {<br>
+	display: block;<br>
+	margin-bottom: 5px;<br>
+}<br>
+
+.join-main input[type='text']  {<br>
+	font-size: 16px;<br>
+	padding: 5px;<br>
+	height: 40px;<br>
+	width: 100%;<br>
+    border-radius: 3px;<br>
+
+}<br>
+
+.join-main input[type='email']  {<br>
+	font-size: 16px;<br>
+    border-radius: 3px;<br>
+	padding: 5px;<br>
+	height: 40px;<br>
+	width: 100%;<br>
+}<br>
+
+.join-main select {<br>
+	font-size: 16px;<br>
+	padding: 5px;<br>
+	height: 40px;<br>
+	width: 100%;<br>
+}<br>
+
+.join-main .btn {<br>
+	margin-top: 20px;<br>
+	width: 100%;<br>
+    border: none;<br>
+
+}<br>
+.flex{<br>
+    display: grid;<br>
+    place-content: center;<br>
+}<br>
+@media (max-width: 700px) {<br>
+	.chat-main {<br>
+		display: block;<br>
+	}<br>
+
+	.chat-sidebar {<br>
+		display: none;<br>
+	}<br>
+}<br>
+            </div>
+            <p class="font1">Now, navigating to http://localhost:8000, we should see something as below:</p>
+    <img src="img/uuu.png" alt="">
+    <hr>
+    <hr>
+    <h2>Handling Websockets(on server side)</h2>
+    <p class="font1">1.	Replace existing code in index.js with this:</p>
+    <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+        // index.js<br>
+	
+
+	const path = require('path');<br>
+	const http = require('http');<br>
+	const express = require('express');<br>
+	const socketio = require('socket.io');<br>
+	const formatMessage = require('./helpers/formatDate')<br>
+	const {<br>
+	  getActiveUser,<br>
+	  exitRoom,<br>
+	  newUser,<br>
+	  getIndividualRoomUsers<br>
+	} = require('./helpers/userHelper');<br>
+	
+
+	const app = express();<br>
+	const server = http.createServer(app);<br>
+	const io = socketio(server);<br>
+	
+
+	// Set public folder<br>
+	app.use(express.static(path.join(__dirname, 'public')));<br>
+	
+
+	// this block will run when the client connects<br>
+	io.on('connection', socket => {<br>
+	  socket.on('joinRoom', ({ username, room }) => {<br>
+	    const user = newUser(socket.id, username, room);<br>
+	
+
+	    socket.join(user.room);<br>
+	
+
+	    // General welcome<br>
+	    socket.emit('message', formatMessage("QuackChat", 'Messages are limited to this room! '));<br>
+	
+
+	    // Broadcast everytime users connects<br>
+	    socket.broadcast<br>
+	      .to(user.room)<br>
+	      .emit(<br>
+	        'message',<br>
+	        formatMessage("QuackChat", `${user.username} has joined the room`)<br>
+	      );<br>
+	
+
+	    // Current active users and room name<br>
+	    io.to(user.room).emit('roomUsers', {<br>
+	      room: user.room,<br>
+	      users: getIndividualRoomUsers(user.room)<br>
+	    });<br>
+	  });<br>
+	
+
+	  // Listen for client message<br>
+	  socket.on('chatMessage', msg => {<br>
+	    const user = getActiveUser(socket.id);<br>
+	
+
+	    io.to(user.room).emit('message', formatMessage(user.username, msg));<br>
+	  });<br>
+	
+
+	  // Runs when client disconnects<br>
+	  socket.on('disconnect', () => {<br>
+	    const user = exitRoom(socket.id);<br>
+	
+
+	    if (user) {<br>
+	      io.to(user.room).emit(<br>
+	        'message',<br>
+	        formatMessage("WebCage", `${user.username} has left the room`)<br>
+	      );<br>
+	
+
+	      // Current active users and room name<br>
+	      io.to(user.room).emit('roomUsers', {<br>
+	        room: user.room,<br>
+	        users: getIndividualRoomUsers(user.room)<br>
+	      });<br>
+	    }<br>
+	  });<br>
+	});<br>
+	
+
+	const PORT = process.env.PORT || 3000;<br>
+	
+
+	server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+    </div>
+    <hr>
+    <p class="font1">2 . Break down the moving parts of the codebase.</p>
+    <img src="img/uuuu.png" alt="">
+    <hr>
+    <p class="font1">3.	Create an Express server then use it to initialize a socket.io server.</p>
+    <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+        io.on('connection', socket => {<br>
+  
+            // this block will run when the client connects<br>
+            socket.on('joinRoom', ({ username, room }) => {<br>
+              const user = newUser(socket.id, username, room);<br>
+          
+          
+              socket.join(user.room);<br>
+          
+          
+              // General welcome<br>
+              socket.emit('message', formatMessage("QuackChat", 'Messages are limited to this room! '));<br>
+          
+          
+              // Broadcast everytime users connects<br>
+              socket.broadcast<br>
+                .to(user.room)<br>
+                .emit(<br>
+                  'message',<br>
+                  formatMessage("QuackChat", `${user.username} has joined the room`)<br>
+                );<br>
+          
+          
+              // Current active users and room name<br>
+              io.to(user.room).emit('roomUsers', {<br>
+                room: user.room,<br>
+                users: getIndividualRoomUsers(user.room)<br>
+              });<br>
+            });<br>
+          }<br>
+          ...<br>
+          
+    </div>
+    <hr>
+    <p class="font1">4.	With the socket server instance initialized, we can now emit and listen to events between the server and client. In our code, we started by listening to a joinRoom event from the client. This event handles the following:<br>
+        •	A new client joining a room<br>
+        •	The general message broadcasted when new users connect<br>
+        •	Current users in a room<br>
+        
+        </p>
+        <img src="img/Picture3.png" alt="">
+        <hr>
+    <p class="font1">5.	Next, the server listens for the client messages. Here, the server emits the client message to the current room.
+        Note: Rooms are server-only.Finally,run this when a client exit a room. It will remove the current user from the room and update the list of active users.
+        </p>
+        <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+            socket.on('disconnect', () => {<br>
+                const user = exitRoom(socket.id);<br>
+                if (user) {<br>
+                  io.to(user.room).emit(<br>
+                    'message',<br>
+                    formatMessage("QuackChat", `${user.username} has left the room`)<br>
+                  );<br>
+              
+              
+                  // Current active users and room name<br>
+                  io.to(user.room).emit('roomUsers', {<br>
+                    room: user.room,<br>
+                    users: getIndividualRoomUsers(user.room)<br>
+                  });<br>
+                }<br>
+              });<br>
+              ...
+              
+        </div>
+        <hr>
+    <p class="font1">6.	You will notice we are using some helper functions in our server code. Go ahead and add them now. In the root of your project, create a helper directory, and create these two files formatDate.js and userHelper.js.</p>
+    <img src="img/Picture4.png" alt="">
+    <hr>
+    <p class="font1">7.	This function takes in the username and message as arguments, and returns an object containing a formatted time, username, and message. <br>Just like this:</p>
+    <div style="height:500px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+        // helper/userHelper.js<br>
+	
+
+	const users = [];<br>
+	
+
+	// Join user to chat<br>
+	function newUser(id, username, room) {<br>
+	  const user = { id, username, room };<br>
+	
+
+	  users.push(user);<br>
+	
+
+	  return user;<br>
+	}<br>
+	
+
+	// Get current user<br>
+	function getActiveUser(id) {<br>
+	  return users.find(user => user.id === id);<br>
+	}<br>
+	
+
+	// User leaves chat<br>
+	function exitRoom(id) {<br>
+	  const index = users.findIndex(user => user.id === id);<br>
+	
+
+	  if (index !== -1) {<br>
+	    return users.splice(index, 1)[0];<br>
+	  }<br>
+	}<br>
+	
+
+	// Get room users<br>
+	function getIndividualRoomUsers(room) {<br>
+	  return users.filter(user => user.room === room);<br>
+	}<br>
+	
+
+	module.exports = {<br>
+	  newUser,<br>
+	  getActiveUser,<br>
+	  exitRoom,<br>
+	  getIndividualRoomUsers<br>
+	};
+    
+
+    </div>
+    <p class="font1">This helper function handles all the user behaviour.<br>
+        At this point, we have successfully handled socket.IO on the server-side.
+        </p>
+        <hr>
+        <hr>
+
+    <h2>Handling Websockets(on client side)</h2>
+    <p class="font1">1.	Inside the public directory, create a js directory and inside it a main.js file with the following code:</p>
+    <img src="img/Picture5.png" alt="">
+    <p class="font1">Firstly, we use the DOM* to target HTML elements that will be updated. Then, we use the QS library* to parse username and room from the URL. Setting ignoreQueryPrefix to true will omit the characters in the URL string.</p>
+    <hr>
+    <p class="font1">2.	Next, we initialised client-side socket.io. Then, we emit the joinRoom event to the server. Earlier, we saw how the server listened and handled this event.
+        Go ahead to receive events the server sent. Add these lines of code:
+        </p>
+    <img src="img/Picture6.png" alt="">
+    <p class="font1">
+        Remember, the server emits the roomUsers event, which sends the current users in a room and the room name. In our frontend code, we listen to this event and use the DOM to update the room name and active users list. We will handle the outputRoomName(name) and outputUsers(users) functions much later.
+    </p>
+    <hr>
+    <p class="font1">3.	Add these line of code:</p>
+    <img src="img/Picture7.png" alt="">
+    <p class="font1">The server emits a message event and sends "Messages are limited to this room!" as payload. On the frontend, we listen to the event and update the UI* with the payload. We'll handle the outputMessage(message) soon. The chatMessages.scrollTop = chatMessages.scrollHeight enables the page to always scroll to the latest message.</p>
+    <hr>
+    <p class="font1">4.	Let's now handle the message box. Add these lines of code:</p> 
+    <img src="img/Picture8.png" alt="">
+    <p class="font1">Here, we begin by adding a submit event listener and preventing the form default behaviour with e.preventDefault(). Next, we target the text value in the message box. In chat.html, the form input has an id of msg, and so we target the element by using e.target.elements.msg.value. The msg.trim() removes whitespace from both sides of the message string. If there is no message, end the function call. On the other hand, if there's a message, emit the chatMessage event and the message as payload to the server. Finally, clear the message box and add keep focus on it.</p> 
+    <hr>
+    <p class="font1">5.	Now, write the functions handling UI state. Add these lines of code:This is just DOM manipulation. The message argument is an object that has text, time, and username keys. Remember, that the time is formatted with Moment in our formatDate.js helper function. The function will return a div with the message a user types in the message box.
+        Next, update the name of the room the user is currently in. <br>
+        Add the lines of code:
+        </p> 
+    <img src="img/Picture9.png" alt="">
+    <p class="font1">The room argument has the room as payload.</p> 
+    <hr>
+    <p class="font1">6.	Next, update the current users in a room. Add these lines of code:</p> 
+    <img src="img/Picture10.png" alt="">
+    <p class="font1">The users argument is an array object containing the id, room, and username of a user. When you log it to the console, you get this:</p> 
+    <img src="img/Picture11.png" alt="">
+    <hr>
+    <p class="font1">7.	Finally, confirm the user wants to leave a room.<br> Add these lines of code:</p> 
+    <img src="img/Picture12.png" alt="">
+    <h2>Final Demo </h2>
+    <p class="font1">Now let’s test the app. Restart your dev server and navigate to http://localhost:8000 in two different browser windows. You should have something like this:</p>
+    <img src="img/Picture13.gif" alt="">
+    <hr>
+    <hr>
+    <h2>Refference</h2>
+    <table>
+        <tr>
+          <th>Term used</th>
+          <th>Description</th>
+          
+        </tr>
+        <tr>
+          <td>Node.js</td>
+          <td>Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. </td>
+          
+        </tr>
+        <tr>
+          <td>Websocket</td>
+          <td>WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection. </td>
+          
+        </tr>
+        <tr>
+            <td>JavaScript runtime</td>
+            <td>Javascript runtime refers to where your javascript code is executed when you run it.</td>
+            
+          </tr>
+          <tr>
+            <td>HTTP</td>
+            <td>Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML. </td>
+            
+          </tr>
+          <tr>
+            <td>Streaming</td>
+            <td>Streaming refers to any media content – live or recorded – delivered to computers and mobile devices via the internet and played back in real time.</td>
+            
+          </tr>
+          <tr>
+            <td>low latency</td>
+            <td>Low latency describes a computer network that is optimized to process a very high volume of data messages with minimal delay .</td>
+            
+          </tr>
+          <tr>
+            <td>TCP</td>
+            <td>TCP (Transmission Control Protocol) is an important network protocol that lets two hosts connect and exchange data streams.</td>
+            
+          </tr>
+          <tr>
+            <td>API</td>
+            <td>An application programming interface is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software.</td>
+            
+          </tr>
+          <tr>
+            <td>event-driven</td>
+            <td>An application that responds to input from the user (mouse movement, keystrokes, menu choices, etc.) or from messages from other applications.</td>
+            
+          </tr>
+          <tr>
+            <td>HTML</td>
+            <td>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.</td>
+            
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</td>
+            
+          </tr>
+          <tr>
+            <td>Javascript</td>
+            <td>JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. </td>
+            
+          </tr>
+          <tr>
+            <td>Express</td>
+            <td>Express.js, or simply Express, is a back end web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.</td>
+            
+          </tr>
+          <tr>
+            <td>Socket.io</td>
+            <td>Socket.IO is a event-driven JavaScript library for real-time web applications. It enables real-time, bi-directional communication between web clients and servers. </td>
+            
+          </tr>
+          <tr>
+            <td>Nodemon</td>
+            <td>Nodemon is a tool that helps develop node. js based applications by automatically restarting the node application when file changes in the directory are detected.</td>
+            
+          </tr>
+          <tr>
+            <td>Moment</td>
+            <td>MomentJS is a JavaScript library which helps is parsing, validating, manipulating and displaying date/time in JavaScript in a very easy way. </td>
+            
+          </tr>
+          <tr>
+            <td>mkdir</td>
+            <td>The mkdir command in the Unix, DOS, DR FlexOS, IBM OS/2, Microsoft Windows, and ReactOS operating systems is used to make a new directory.</td>
+            
+          </tr>
+          <tr>
+            <td>cd</td>
+            <td>The cd command, also known as chdir (change directory), is a command-line shell command used to change the current working directory in various operating systems.</td>
+            
+          </tr>
+          <tr>
+            <td>npm init --y</td>
+            <td>MThe npm init command is used from the command line to transform your current folder into a new NPM-based JavaScript project. The --y flag when passed to NPM commands tells the generator to use the defaults instead of asking questions.</td>
+            
+          </tr>
+          <tr>
+            <td>JSON</td>
+            <td>JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays.</td>
+            
+          </tr>
+          <tr>
+            <td>Github Repo</td>
+            <td>GitHub is a Git repository hosting service, but it adds many of its own features. While Git is a command line tool, GitHub provides a Web-based graphical interface. It also provides access control and several collaboration features, such as a wikis and basic task management tools for every project.</td>
+            
+          </tr>
+          <tr>
+            <td>DOM</td>
+            <td>The Document Object Model is a cross-platform and language-independent interface that treats an XML or HTML document as a tree structure wherein each node is an object representing a part of the document. The DOM represents a document with a logical tree.</td>
+            
+          </tr>
+          <tr>
+            <td>QS library</td>
+            <td>The querystring module provides utilities for parsing and formatting URL query strings. </td>
+            
+          </tr> 
+          <tr>
+            <td>UI</td>
+            <td>User interface (UI) is the series of screens, pages, and visual elements—like buttons and icons—that enable a person to interact with a product or service.</td>
+            
+          </tr> 
+      </table>
+      <hr>
+      <hr>
+      <h2>Troubleshooting</h2>
+      <p class="font1">Initially when you execute the command nodemon index.js in the terminal the following error might occur :</p>
+      <img src="img/1111.png" alt="">
+      <p class="font1">Solution: Just go to the folder where nodemon.ps1 places (path is in error) and delete nodemon.ps1 file.
+        now go to the terminal and run nodemon -v, if you get a version then the problem solved.
+        
+        </p>
+        <hr>
+        <hr>
+</div>
+    
+    
+    
+    <div class="max-width-1 m-auto"><hr></div>
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>People who read this also read</h2>
+        <div class="row">
+
+       
+        <div class="home-article more-post">
+            <div class="home-article-img">
+                <img src="img/email.png" alt="article">
+            </div>
+            <div class="home-article-content font1 center">
+                <a href="smplib.html"><h3>Application of smtplib module</h3></a>
+                
+                <div>Author: Neelima Mohanty</div>
+                <span>20/01/2022 | 10:30 PM</span>
+            </div>
+        </div>
+        
+        
+    </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; TechWorm </p>
+         
+    </div>
+</body>
+</html>

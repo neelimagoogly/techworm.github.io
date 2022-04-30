@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>TechWorm</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="index.html">
+              <span><img src="img/worm2.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="search.html" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    
+    <div class="m-auto blog-post-content max-width-2 m-auto my-2">
+        <h1 class="font1">Application of smtplib module</h1>
+        <div class="blogpost-meta">
+            <div class="author-info">
+                <div>
+                <b>
+                  Author - Neelima Mohanty
+                </b>
+                </div>
+                <div>10/01/2022 | 10:30 PM</div>
+            </div>
+            <div class="social">
+                <svg width="29" height="29" class="hk"><path d="M22.05 7.54a4.47 4.47 0 0 0-3.3-1.46 4.53 4.53 0 0 0-4.53 4.53c0 .35.04.7.08 1.05A12.9 12.9 0 0 1 5 6.89a5.1 5.1 0 0 0-.65 2.26c.03 1.6.83 2.99 2.02 3.79a4.3 4.3 0 0 1-2.02-.57v.08a4.55 4.55 0 0 0 3.63 4.44c-.4.08-.8.13-1.21.16l-.81-.08a4.54 4.54 0 0 0 4.2 3.15 9.56 9.56 0 0 1-5.66 1.94l-1.05-.08c2 1.27 4.38 2.02 6.94 2.02 8.3 0 12.86-6.9 12.84-12.85.02-.24 0-.43 0-.65a8.68 8.68 0 0 0 2.26-2.34c-.82.38-1.7.62-2.6.72a4.37 4.37 0 0 0 1.95-2.51c-.84.53-1.81.9-2.83 1.13z"></path></svg>
+
+                <svg style="background: black;
+                border-radius: 21px;" width="29" height="29" viewBox="0 0 29 29" fill="none" class="hk"><path d="M5 6.36C5 5.61 5.63 5 6.4 5h16.2c.77 0 1.4.61 1.4 1.36v16.28c0 .75-.63 1.36-1.4 1.36H6.4c-.77 0-1.4-.6-1.4-1.36V6.36z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.76 20.9v-8.57H7.89v8.58h2.87zm-1.44-9.75c1 0 1.63-.65 1.63-1.48-.02-.84-.62-1.48-1.6-1.48-.99 0-1.63.64-1.63 1.48 0 .83.62 1.48 1.59 1.48h.01zM12.35 20.9h2.87v-4.79c0-.25.02-.5.1-.7.2-.5.67-1.04 1.46-1.04 1.04 0 1.46.8 1.46 1.95v4.59h2.87v-4.92c0-2.64-1.42-3.87-3.3-3.87-1.55 0-2.23.86-2.61 1.45h.02v-1.24h-2.87c.04.8 0 8.58 0 8.58z" fill="#fff"></path></svg>
+
+                <svg width="29" height="29" class="hk"><path d="M23.2 5H5.8a.8.8 0 0 0-.8.8V23.2c0 .44.35.8.8.8h9.3v-7.13h-2.38V13.9h2.38v-2.38c0-2.45 1.55-3.66 3.74-3.66 1.05 0 1.95.08 2.2.11v2.57h-1.5c-1.2 0-1.48.57-1.48 1.4v1.96h2.97l-.6 2.97h-2.37l.05 7.12h5.1a.8.8 0 0 0 .79-.8V5.8a.8.8 0 0 0-.8-.79"></path></svg>
+
+            </div>
+        </div>
+        <hr>
+        <h2>The smtplib module
+        </h2>
+         <p class="font1">The smtplib is a Python library for sending emails using the Simple Mail Transfer Protocol (SMTP). The smtplib is a built-in module; we do not need to install it. It abstracts away all the complexities of SMTP.
+          Simple Mail Transfer Protocol (SMTP) is a communication protocol for electronic mail transmission. Is is an Internet standard, which was first defined in 1982 by RFC 821, and updated in 2008 by RFC 5321 to Extended SMTP additions. Mail servers and other message transfer agents use SMTP to send and receive mail messages.<br>    
+          In this post , I will explain you one of the major application of this python module i.e,sending email by performing a small task.
+        </p>
+            <hr>
+            <hr>
+         <h2>Prerequisites</h2>
+         <p class="font1">Before following this tutorial, you need the following:</p>
+         <ul>•	Familiarity with Python language.</ul>
+         <ul>•	An E-mail account on any mail server.</ul>
+         <div class="danger">
+          <p><strong>Note:</strong> Avoid using Gmail, because it is a highly secured server and it is quite complex to make it work.Instead, use development servers or a shared webhosting server.
+
+          </p>
+        </div>
+         <hr>
+         <hr>
+         <h2>Creating an SMTP object</h2>
+         <p class="font1">1.	This is a simple syntax to create one SMTP object, which can later be used to send an e-mail :</p>
+         <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+          import smtplib<br>
+
+smtpObj = smtplib.SMTP( [host [, port [, local_hostname]]] )  
+         </div>
+         Details of the parameters −<br>
+
+         •host − This is the host running your SMTP server. You can specify IP address of the host or a domain name like tutorialspoint.com. This is optional argument.<br>
+
+         •port − If you are providing host argument, then you need to specify a port, where SMTP server is listening. Usually this port would be 25.<br>
+
+         •local_hostname − If your SMTP server is running on your local machine, then you can specify just localhost as of this option.<br>
+
+An SMTP object has an instance method called sendmail, which is typically used to do the work of mailing a message. It takes three parameters −<br>
+
+•The sender − A string with the address of the sender.<br>
+
+•The receivers − A list of strings, one for each recipient.<br>
+
+•The message − A message as a string formatted as specified in the various RFCs.<br>
+         <hr>
+         <p class="font1">2.	Open your code editor, and create a file named app.py.
+ </p>
+ 
+ <hr>
+         <p class="font1">3.	Then open the file and type the following code in it :
+ </p>
+ <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+  import smtplib from tkinter import * <br>
+   
+   
+  def send_message():<br>
+      
+      address_info = address.get()<br>
+      
+      email_body_info = email_body.get()<br>
+      
+      print(address_info,email_body_info)<br>
+      
+      sender_email = "type your email ID"<br>
+      
+      sender_password = "type your password"<br>
+      
+      server = smtplib.SMTP('smtp.gmail.com',587)<br>
+      
+      server.starttls()<br>
+      
+      server.login(sender_email,sender_password)<br>
+      
+      print("Login successful")<br>
+      
+      server.sendmail(sender_email,address_info,email_body_info)<br>
+      
+      print("Message sent")<br>
+      
+      address_entry.delete(0,END)<br>
+      email_body_entry.delete(0,END)<br>
+      
+      
+      
+   
+  app = Tk()<br>
+   
+  app.geometry("500x500")<br>
+  
+   
+  app.title("Python Mail Send App")<br>
+   
+  heading = Label(text="Python Email Sending App",bg="yellow",fg="black",font="10",width="500",height="3")<br>
+   
+  heading.pack()<br>
+   
+  address_field = Label(text="Recipient Address :")<br>
+  email_body_field = Label(text="Message :")<br>
+   
+  address_field.place(x=15,y=70)<br>
+  email_body_field.place(x=15,y=140)<br>
+   
+  address = StringVar()<br>
+  email_body = StringVar()<br>
+   
+   
+  address_entry = Entry(textvariable=address,width="30")<br>
+  email_body_entry = Entry(textvariable=email_body,width="30")<br>
+   
+  address_entry.place(x=15,y=100)<br>
+  email_body_entry.place(x=15,y=180)<br>
+   
+  button = Button(app,text="Send Message",command=send_message,width="30",height="2",bg="grey")<br>
+   
+  button.place(x=15,y=220)<br>
+   
+   
+  mainloop()</div>
+ <hr>
+         <p class="font1">4.Now , type the following command in the terminal:</p>
+         <h5>python app.py</h5>
+         <p class="font1">The following application would appear.</p>
+         <img src="img/email.png" alt="">
+         <p class="font1">Type in the Recipient's E-mail address and the message to be delivered and click Send Message button.</p>
+         <hr>
+         <hr>
+         <h2>Conclusion</h2>
+         <p class="font1">Check the recipient's inbox to find the sent mail.Happy learning.</p>
+
+         
+         
+</div>
+    
+    
+    
+    <div class="max-width-1 m-auto"><hr></div>
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>People who read this also read</h2>
+        <div class="row">
+
+       
+        <div class="home-article more-post">
+            <div class="home-article-img">
+                <img src="img/SNAP.png" alt="article">
+            </div>
+            <div class="home-article-content font1 center">
+                <a href="blogpost.html"><h3>QuackChat – Creating a Real Time Chat App</h3></a>
+                
+                <div>Author: Neelima Mohanty</div>
+                <span>10/01/2022 | 10:30 PM</span>
+            </div>
+        </div>
+        
+        
+    </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; TechWorm </p>
+         
+    </div>
+</body>
+</html>
