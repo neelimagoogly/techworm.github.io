@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>TechWorm</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="index.html">
+              <span><img src="img/worm2.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="search.html" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+        <div class="m-auto blog-post-content max-width-2 m-auto my-2">
+            <h1 class="font1">Creation of new package with Hunter C++</h1>
+            <div class="blogpost-meta">
+                <div class="author-info">
+                    <div>
+                    <b>
+                      Author - Neelima Mohanty
+                    </b>
+                    </div>
+                    <div>19/02/2022 | 10:30 PM</div>
+                </div>
+                
+                <div class="social">
+                    <svg width="29" height="29" class="hk"><path d="M22.05 7.54a4.47 4.47 0 0 0-3.3-1.46 4.53 4.53 0 0 0-4.53 4.53c0 .35.04.7.08 1.05A12.9 12.9 0 0 1 5 6.89a5.1 5.1 0 0 0-.65 2.26c.03 1.6.83 2.99 2.02 3.79a4.3 4.3 0 0 1-2.02-.57v.08a4.55 4.55 0 0 0 3.63 4.44c-.4.08-.8.13-1.21.16l-.81-.08a4.54 4.54 0 0 0 4.2 3.15 9.56 9.56 0 0 1-5.66 1.94l-1.05-.08c2 1.27 4.38 2.02 6.94 2.02 8.3 0 12.86-6.9 12.84-12.85.02-.24 0-.43 0-.65a8.68 8.68 0 0 0 2.26-2.34c-.82.38-1.7.62-2.6.72a4.37 4.37 0 0 0 1.95-2.51c-.84.53-1.81.9-2.83 1.13z"></path></svg>
+    
+                    <svg style="background: black;
+                    border-radius: 21px;" width="29" height="29" viewBox="0 0 29 29" fill="none" class="hk"><path d="M5 6.36C5 5.61 5.63 5 6.4 5h16.2c.77 0 1.4.61 1.4 1.36v16.28c0 .75-.63 1.36-1.4 1.36H6.4c-.77 0-1.4-.6-1.4-1.36V6.36z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.76 20.9v-8.57H7.89v8.58h2.87zm-1.44-9.75c1 0 1.63-.65 1.63-1.48-.02-.84-.62-1.48-1.6-1.48-.99 0-1.63.64-1.63 1.48 0 .83.62 1.48 1.59 1.48h.01zM12.35 20.9h2.87v-4.79c0-.25.02-.5.1-.7.2-.5.67-1.04 1.46-1.04 1.04 0 1.46.8 1.46 1.95v4.59h2.87v-4.92c0-2.64-1.42-3.87-3.3-3.87-1.55 0-2.23.86-2.61 1.45h.02v-1.24h-2.87c.04.8 0 8.58 0 8.58z" fill="#fff"></path></svg>
+    
+                    <svg width="29" height="29" class="hk"><path d="M23.2 5H5.8a.8.8 0 0 0-.8.8V23.2c0 .44.35.8.8.8h9.3v-7.13h-2.38V13.9h2.38v-2.38c0-2.45 1.55-3.66 3.74-3.66 1.05 0 1.95.08 2.2.11v2.57h-1.5c-1.2 0-1.48.57-1.48 1.4v1.96h2.97l-.6 2.97h-2.37l.05 7.12h5.1a.8.8 0 0 0 .79-.8V5.8a.8.8 0 0 0-.8-.79"></path></svg>
+    
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <p class="font1">Hunter is a CMake driven cross-platform package manager for C/C++1 projects. With the help of Hunter you can<br>
+                organize builds for Linux, Windows, macOS, iOS, Android, Raspberry Pi and other platforms. Third-party external<br>
+                projects are highly customizable, effectively allowing you to have myriad variants of directories with them based on<br>
+                combinations of version to build, static/shared, CMake -D options, Release/Debug, etc.<br>
+                This is a guide for adding new package to Hunter. We start with the simple one (CMake based, no dependencies),<br>
+then cover “hunterization” (CMake based, depends on other packages). Final is a most complex one (non-CMake<br>
+packages, creating custom build scheme).<br>
+
+
+            </p>
+            
+             
+                <hr>
+                <hr>
+                <h2>Prerequisites</h2>
+                <p class="font1">
+                    •	Knowledge about Hunter and CMake.<br>
+                    •	Familiarity with C++ programming language.<br>
+                    •	CMake and hunter setup.<br>
+                
+                </p>
+            
+                <hr>
+                <hr>
+                <h2>User Guide </h2>
+                <h3>Follow the steps written below:</h3>
+                <div class="step"><h3>Step 1 : Environment</h3></div>
+                <p class="font1">Configuration of the package should be predictable.
+                    For example it should not depend on the fact that some package already installed or not: </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">find_package(OpenSSL)<br>
+                    if(OPENSSL_FOUND)<br>
+                    &nbsp;&nbsp;target_compile_definitions(... PUBLIC FOO_WITH_OPENSSL=1)<br>
+                    endif()</div>
+                    <p class="font1">If package is optional then control behavior explicitly:</p>
+                    <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                        option(FOO_WITH_OPENSSL "Build with OpenSSL" ON)<br>
+if(FOO_WITH_OPENSSL)<br>
+&nbsp;&nbsp;find_package(OpenSSL REQUIRED) # fatal error if not found!<br>
+&nbsp;&nbsp;target_compile_definitions(... PUBLIC FOO_WITH_OPENSSL=1)<br>
+endif()
+
+                    </div>
+                    <p class="font1">Same with the programs:
+                    </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">find_program(PYTHON_EXE python) # Use 'find_package(PythonInterp)' in real code<br>
+                    if(PYTHON_EXE)<br>
+                    # generate some extra code<br>
+                    endif()
+                    </div>
+                <hr>
+                <div class="step"><h3>Step 2 : Add package to Hunter
+                </h3></div>
+                <p class="font1">Recommended name for the package is lowercase separated with underscore.<br>
+                    C++:</p>
+                
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">#include &lt;hunter_box_1/hunter_box_1.hpp><br>
+                    int main() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;hunter_box_1::foo();<br>
+                    }
+                    </div>
+                    <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">// file hunter_box_1.hpp<br>
+                        namespace hunter_box_1 {<br>
+                        } // namespace hunter_box_1</div><br>
+                    
+                <p class="font1">CMake with Hunter:
+                </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">hunter_add_package(hunter_box_1)<br>
+                    find_package(hunter_box_1 CONFIG REQUIRED)<br>
+                    target_link_libraries(... hunter_box_1::hunter_box_1)</div>
+                
+                <hr>
+                <div class="step"><h3>Step 3 : Fork Hunter</h3></div>
+                <p class="font1">Hunter hosted on GitHub service where common way to add code is to fork project and create pull request.<br>
+                    Fork cpp-pm/hunter, clone your fork and initialize all submodules:
+                </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">> git clone https://github.com/hunterbox/hunter<br>
+                    > cd hunter<br>
+                    [hunter]> git submodule update --init --recursive .</div>
+                <p class="font1">Create branch to work on new package:
+                </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">[hunter]> git checkout -b pr.hunter_box_1</div>
+                <hr>
+                
+                
+                <hr>
+                <h2>Congratulations</h2>
+                <p class="font1"></a></p>
+                <div class="alert alert-success" role="alert">
+                    
+                    <p>Aww yeah, you successfully created a package with hunter C++ and I hope you have not missed out any step. </p>
+                    <hr>
+                    
+                  </div>
+                  <div class="max-width-1 m-auto"><hr></div>
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>People who read this also read</h2>
+        <div class="row">
+
+       
+        <div class="home-article more-post">
+            <div class="home-article-img">
+                <img src="img/email.png" alt="article">
+            </div>
+            <div class="home-article-content font1 center">
+                <a href="smplib.html"><h3>Application of smtplib module</h3></a>
+                
+                <div>Author: Neelima Mohanty</div>
+                <span>20/01/2022 | 10:30 PM</span>
+            </div>
+        </div>
+        
+        
+    </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; TechWorm </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+    </div>
+</body>

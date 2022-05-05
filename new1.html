@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>TechWorm</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="index.html">
+              <span><img src="img/worm2.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="search.html" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+        <div class="m-auto blog-post-content max-width-2 m-auto my-2">
+            <h1 class="font1">Todo List Web App using Django</h1>
+            <div class="blogpost-meta">
+                <div class="author-info">
+                    <div>
+                    <b>
+                      Author - Neelima Mohanty
+                    </b>
+                    </div>
+                    <div>9/02/2022 | 10:30 PM</div>
+                </div>
+                
+                <div class="social">
+                    <svg width="29" height="29" class="hk"><path d="M22.05 7.54a4.47 4.47 0 0 0-3.3-1.46 4.53 4.53 0 0 0-4.53 4.53c0 .35.04.7.08 1.05A12.9 12.9 0 0 1 5 6.89a5.1 5.1 0 0 0-.65 2.26c.03 1.6.83 2.99 2.02 3.79a4.3 4.3 0 0 1-2.02-.57v.08a4.55 4.55 0 0 0 3.63 4.44c-.4.08-.8.13-1.21.16l-.81-.08a4.54 4.54 0 0 0 4.2 3.15 9.56 9.56 0 0 1-5.66 1.94l-1.05-.08c2 1.27 4.38 2.02 6.94 2.02 8.3 0 12.86-6.9 12.84-12.85.02-.24 0-.43 0-.65a8.68 8.68 0 0 0 2.26-2.34c-.82.38-1.7.62-2.6.72a4.37 4.37 0 0 0 1.95-2.51c-.84.53-1.81.9-2.83 1.13z"></path></svg>
+    
+                    <svg style="background: black;
+                    border-radius: 21px;" width="29" height="29" viewBox="0 0 29 29" fill="none" class="hk"><path d="M5 6.36C5 5.61 5.63 5 6.4 5h16.2c.77 0 1.4.61 1.4 1.36v16.28c0 .75-.63 1.36-1.4 1.36H6.4c-.77 0-1.4-.6-1.4-1.36V6.36z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.76 20.9v-8.57H7.89v8.58h2.87zm-1.44-9.75c1 0 1.63-.65 1.63-1.48-.02-.84-.62-1.48-1.6-1.48-.99 0-1.63.64-1.63 1.48 0 .83.62 1.48 1.59 1.48h.01zM12.35 20.9h2.87v-4.79c0-.25.02-.5.1-.7.2-.5.67-1.04 1.46-1.04 1.04 0 1.46.8 1.46 1.95v4.59h2.87v-4.92c0-2.64-1.42-3.87-3.3-3.87-1.55 0-2.23.86-2.61 1.45h.02v-1.24h-2.87c.04.8 0 8.58 0 8.58z" fill="#fff"></path></svg>
+    
+                    <svg width="29" height="29" class="hk"><path d="M23.2 5H5.8a.8.8 0 0 0-.8.8V23.2c0 .44.35.8.8.8h9.3v-7.13h-2.38V13.9h2.38v-2.38c0-2.45 1.55-3.66 3.74-3.66 1.05 0 1.95.08 2.2.11v2.57h-1.5c-1.2 0-1.48.57-1.48 1.4v1.96h2.97l-.6 2.97h-2.37l.05 7.12h5.1a.8.8 0 0 0 .79-.8V5.8a.8.8 0 0 0-.8-.79"></path></svg>
+    
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <p class="font1">Hello everyone ! Everyday , both at home and workplace , we accomplish a lot of tasks but often forget which tasks we have completed and which are yet to be completed.Inorder to solve this problem we make Todo lists.But if you are a python lover and application developer just like me , this tutorial here helps you out to make a wonderful Todo-List app by using Django framework as its backend.</p>
+            
+             
+                <hr>
+                <hr>
+                <h2>Prerequisites</h2>
+                <p class="font1">
+                    •	Knowledge about basic web framework(HTML,CSS,Javascript).<br>
+                    •	Familiarity with Python programming language.<br>
+                    •	Django framework setup.<br>
+                
+                </p>
+            
+                <hr>
+                <hr>
+                <h2>Tutorial Begins</h2>
+                <h3>Follow the steps written below:</h3>
+                <div class="step"><h3>Step 1 : Django Project Creation</h3></div>
+                <p class="font1">Open VSCode editor and type the following in the terminal and type the following coomands :  </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">django-admin startproject &lt;Projectname></div>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">python manage.py startapp home</div>
+                <hr>
+                <div class="step"><h3>Step 2 : Linking Templates</h3></div>
+                <p class="font1">Create static and template folders(HTML,CSS and Javascript ....frontend files will be stored inside the templates).<br>
+                Reffer the files present in the github repo (link provided at enk of this tutorial).</p>
+                <p class="font1">In setting.py under TEMPLATES (fill the following directory)</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">'DIR':[os.path.join(BASE_DIR,'templates')]</div>
+                <p class="font1">Also add this </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">STATICFILES_DIR = [os.path.join9BASE_DIR,'static')]</div>
+                <p class="font1">Move to urls.py and add the following code:</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">from django.urls import path,include</div>
+                <p class="font1">Add a URL to urlpatterns: </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"> path('blog/', include('blog.urls'))</div>
+                <hr>
+                <div class="step"><h3>Step 3 : Setting up admin</h3></div>
+                <p class="font1">Copy all code from urls.py and paste in home/url.py.<br>
+                    Add a URL to urlpatterns:
+                </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">path('', views.home,name='home'),</div>
+                <p class="font1">Delete admin path and also add this</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">from home import views</div>
+                <hr>
+                <div class="step"><h3>Step 4 : Home</h3></div>
+                <p class="font1">Add HttpResponse to import and insert the following lines of code inside views.py url :</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                    def home(request):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return render(request,'index.html')
+                </div>
+                <hr>
+                <div class="step"><h3>Step 5 : Tasks</h3></div>
+                <p class="font1">Create index.html and tasks.html file inside templates directory.<br>
+                    Add a URL to urlpatterns for tasks:
+                </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">path('tasks', views.tasks,name='tasks</div>
+                <hr>
+                <div class="step"><h3>Step 6 : Continue with Tasks</h3></div>
+                <p class="font1">In views.py add this</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                    def tasks(request):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return render(request,'tasks.html')
+                </div>
+                <hr>
+                <div class="step"><h3>Step 7 : Models</h3></div>
+                <p class="font1">Create models.py file and add the code below into it.</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                    class Task(models.Model):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;time=models.DateTimeField(auto_now_add=True)
+                </div>   
+                <p class="font1">In settings.py add 'home' to Installed apps.<br>
+                In admin.py add the following:</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                    from home.models import Task<br>
+                    admin.site.register(Task)
+                </div> 
+                <hr>
+                <div class="step"><h3>Step 8 : Create Superuser</h3></div>
+                <p class="font1">In another terminal,type the command</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">python manage.py create superuser</div>
+                <p class="font1">Then fill everything asked.</p>
+                <div class="step"><h3>Step 9 : Linking Models and Tasks</h3></div>
+                <p class="font1">Go to models.py and under class Task create a funtion</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                    def __str__(self):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return.self.taskTitle
+
+                </div>
+                <p class="font1">In index.html make a form tag and after that tag type {%csrf_token%}</p>
+                <div class="step"><h3>Step 9 : Tasks addition and success message display</h3></div>
+                <p class="font1">In views.py add</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                    def home(request):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;context='{success':False}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if request.method =="POST":<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = request.POST['title']<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desc= request.POST['desc']<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(title,desc)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ins = Task(taskTitle = title,taskDescription=desc)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ins.save()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context = 'success':True<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return reder(request,'index.html',context)<br>
+            
+
+    
+                </div>
+                <hr>
+                <div class="step"><h3>Step 10 : Finishing the project</h3></div>
+                <p class="font1">In index.html under /nav tag add {% if success %} Alert Message {% endif %}<br>
+                In views.py file add : </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                    def task(request):
+                    &nbsp;&nbsp;&nbsp;&nbsp;allTasks = Task.objects.all()
+                    &nbsp;&nbsp;&nbsp;&nbsp;context = {'tasks'.allTasks}
+                    &nbsp;&nbsp;&nbsp;&nbsp;return reder(request,'task.html',context)
+
+                </div>
+                <p class="font1">In tasks.html after tbody tag add {% for tasks in tasks%}</p>
+                <hr>
+                <hr>
+                <h2>Congratulations</h2>
+                <p class="font1"></a></p>
+                <div class="alert alert-success" role="alert">
+                    
+                    <p>Aww yeah, you successfully completed reading this tutorial and I hope you have not missed out any step. </p>
+                    <hr>
+                    <p class="mb-0">In order to get the whole code of the project made by me click here : <a href="https://github.com/neelimagoogly/odolist.github.io.git">Github repo</a></p>
+                  </div>
+                  <div class="max-width-1 m-auto"><hr></div>
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>People who read this also read</h2>
+        <div class="row">
+
+       
+        <div class="home-article more-post">
+            <div class="home-article-img">
+                <img src="img/email.png" alt="article">
+            </div>
+            <div class="home-article-content font1 center">
+                <a href="smplib.html"><h3>Application of smtplib module</h3></a>
+                
+                <div>Author: Neelima Mohanty</div>
+                <span>20/01/2022 | 10:30 PM</span>
+            </div>
+        </div>
+        
+        
+    </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; TechWorm </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+    </div>
+</body>

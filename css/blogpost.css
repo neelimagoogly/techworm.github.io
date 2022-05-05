@@ -44,3 +44,7 @@ table, th, td {
     background-color: #ffdddd;
     border-left: 6px solid #f44336;
   }  
+.step {
+    background-color: plum;
+    width: auto;
+} 
