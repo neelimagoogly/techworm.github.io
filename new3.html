@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>TechWorm</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="index.html">
+              <span><img src="img/worm2.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="search.html" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+        <div class="m-auto blog-post-content max-width-2 m-auto my-2">
+            <h1 class="font1">Login and Registration using PHP and RESTful API</h1>
+            <div class="blogpost-meta">
+                <div class="author-info">
+                    <div>
+                    <b>
+                      Author - Neelima Mohanty
+                    </b>
+                    </div>
+                    <div>29/02/2022 | 10:30 PM</div>
+                </div>
+                
+                <div class="social">
+                    <svg width="29" height="29" class="hk"><path d="M22.05 7.54a4.47 4.47 0 0 0-3.3-1.46 4.53 4.53 0 0 0-4.53 4.53c0 .35.04.7.08 1.05A12.9 12.9 0 0 1 5 6.89a5.1 5.1 0 0 0-.65 2.26c.03 1.6.83 2.99 2.02 3.79a4.3 4.3 0 0 1-2.02-.57v.08a4.55 4.55 0 0 0 3.63 4.44c-.4.08-.8.13-1.21.16l-.81-.08a4.54 4.54 0 0 0 4.2 3.15 9.56 9.56 0 0 1-5.66 1.94l-1.05-.08c2 1.27 4.38 2.02 6.94 2.02 8.3 0 12.86-6.9 12.84-12.85.02-.24 0-.43 0-.65a8.68 8.68 0 0 0 2.26-2.34c-.82.38-1.7.62-2.6.72a4.37 4.37 0 0 0 1.95-2.51c-.84.53-1.81.9-2.83 1.13z"></path></svg>
+    
+                    <svg style="background: black;
+                    border-radius: 21px;" width="29" height="29" viewBox="0 0 29 29" fill="none" class="hk"><path d="M5 6.36C5 5.61 5.63 5 6.4 5h16.2c.77 0 1.4.61 1.4 1.36v16.28c0 .75-.63 1.36-1.4 1.36H6.4c-.77 0-1.4-.6-1.4-1.36V6.36z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.76 20.9v-8.57H7.89v8.58h2.87zm-1.44-9.75c1 0 1.63-.65 1.63-1.48-.02-.84-.62-1.48-1.6-1.48-.99 0-1.63.64-1.63 1.48 0 .83.62 1.48 1.59 1.48h.01zM12.35 20.9h2.87v-4.79c0-.25.02-.5.1-.7.2-.5.67-1.04 1.46-1.04 1.04 0 1.46.8 1.46 1.95v4.59h2.87v-4.92c0-2.64-1.42-3.87-3.3-3.87-1.55 0-2.23.86-2.61 1.45h.02v-1.24h-2.87c.04.8 0 8.58 0 8.58z" fill="#fff"></path></svg>
+    
+                    <svg width="29" height="29" class="hk"><path d="M23.2 5H5.8a.8.8 0 0 0-.8.8V23.2c0 .44.35.8.8.8h9.3v-7.13h-2.38V13.9h2.38v-2.38c0-2.45 1.55-3.66 3.74-3.66 1.05 0 1.95.08 2.2.11v2.57h-1.5c-1.2 0-1.48.57-1.48 1.4v1.96h2.97l-.6 2.97h-2.37l.05 7.12h5.1a.8.8 0 0 0 .79-.8V5.8a.8.8 0 0 0-.8-.79"></path></svg>
+    
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <p class="font1">Hello everyone ! In this tutorial, you will learn how to create a Login and Registration RESTful API using PHP and MySQL Database.</p>
+            
+             
+                <hr>
+                <hr>
+                <h2>Prerequisites</h2>
+                <p class="font1">
+                    •	Knowledge about basic web framework(HTML,CSS,Javascript).<br>
+                    •	Familiarity with Python programming language.<br>
+                    •	XAMPP<br>
+                    •	PHP<br>
+                    •	MySQL
+                
+                </p>
+            
+                <hr>
+                <hr>
+                <h2>Tutorial Begins</h2>
+                <h3>Follow the steps written below:</h3>
+                <div class="step"><h3>Step 1 : MySQL Database Setup </h3></div>
+                <p class="font1">First, we will set up the MySQL Database for this application.</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">Database Name – php_auth_api<br>
+                    Table Name – users</div>
+                    <p>Go inside your MySQL Database and create a new Database called php_auth_api.
+
+                        After that, use the following SQL code to create the users table and the structure of this table –</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">CREATE TABLE `users` (<br>
+                    `id` int(11) NOT NULL AUTO_INCREMENT,<br>
+                    `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,<br>
+                    `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,<br>
+                    `password` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,<br>
+                    PRIMARY KEY (`id`),<br>
+                    UNIQUE KEY `email` (`email`)<br>
+                   ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;</div>
+                <hr>
+                <div class="step"><h3>Step 2 : Creating files & folders</h3></div>
+                <p class="font1">First, Open your Xampp htdocs dir or your server www dir, and here create a new folder called php-auth-api. This is our application folder.
+
+                    After that, you need to install JWT inside this folder, as we will be using it for authorization.</p>
+                <p class="font1">Now we need to create the folders and files as given in the following image of the php-auth-api folder structure.</p>
+                <p class="font1">Inside the application folder, you need to create a new folder called classes, and inside the classes folder, we will create two files or classes –</p>
+                <p class="font1">Database.php – For making the database connection.<br>
+                    JwtHandler.php – For handling the JWT actions like encoding and decoding token.</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">Database.php<br>
+                    <?php<br>
+                    class Database{<br>
+                        
+                        // CHANGE THE DB INFO ACCORDING TO YOUR DATABASE<br>
+                        private $db_host = 'localhost';<br>
+                        private $db_name = 'php_auth_api';<br>
+                        private $db_username = 'root';<br>
+                        private $db_password = '';<br>
+                        
+                        public function dbConnection(){<br>
+                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;try{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$conn = new PDO('mysql:host='.$this->db_host.';dbname='.$this->db_name,$this->db_username,$this->db_password);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return $conn;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;catch(PDOException $e){<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Connection error ".$e->getMessage(); <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                              
+                        }<br>
+                    }</div>
+                <p class="font1">Also add this </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">JwtHandler.php<br>
+                    <?php<br>
+                    require './vendor/autoload.php';<br>
+                    
+                    use Firebase\JWT\JWT;<br>
+                    
+                    class JwtHandler<br>
+                    {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $jwt_secrect;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $token;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $issuedAt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $expire;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $jwt;<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;public function __construct()<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set your default time-zone<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_default_timezone_set('Asia/Kolkata');<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->issuedAt = time();<br>
+                    
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Token Validity (3600 second = 1hr)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->expire = $this->issuedAt + 3600;<br>
+                    
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Set your secret or signature<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->jwt_secrect = "this_is_my_secrect";<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    
+                            &nbsp;&nbsp;&nbsp;&nbsp;public function jwtEncodeData($iss, $data)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->token = array(<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Adding the identifier to the token (who issue the token)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"iss" => $iss,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aud" => $iss,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Adding the current timestamp to the token, for identifying that when the token was issued.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"iat" => $this->issuedAt,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Token expiration<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"exp" => $this->expire,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Payload<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"data" => $data<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;);<br>
+                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;$this->jwt = JWT::encode($this->token, $this->jwt_secrect, 'HS256');<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return $this->jwt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;public function jwtDecodeData($jwt_token)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;$decode = JWT::decode($jwt_token, $this->jwt_secrect, array('HS256'));<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;return [<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"data" => $decode->data<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;];<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;} catch (Exception $e) {<br>
+                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;return [<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"message" => $e->getMessage()<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp; ];<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                            &nbsp;&nbsp;}<br>
+                    }</div>
+                <p class="font1">Create AuthMiddleware.php
+                    This file is for checking whether the token is valid or not.</p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">AuthMiddleware.php<br>
+                    <?php<br>
+                    require __DIR__ . '/classes/JwtHandler.php';<br>
+                    
+                    class Auth extends JwtHandler<br>
+                    {<br>
+    
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $db;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $headers;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;protected $token;<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;public function __construct($db, $headers)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent::__construct();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->db = $db;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->headers = $headers;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    
+                            &nbsp;&nbsp;&nbsp;&nbsp;public function isValid()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (array_key_exists('Authorization', $this->headers) && preg_match('/Bearer\s(\S+)/', $this->headers['Authorization'], $matches)) {<br>
+                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data = $this->jwtDecodeData($matches[1]);<br>
+                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isset($data['data']->user_id) &&<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$user = $this->fetchUser($data['data']->user_id)<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) :<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return [<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"success" => 1,<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"user" => $user<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else :<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return [<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"success" => 0,<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"message" => $data['message'],<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;endif;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return [<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"success" => 0,<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"message" => "Token not found in request"<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    
+                                        &nbsp;&nbsp;&nbsp;&nbsp;protected function fetchUser($user_id)<br>
+                        {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fetch_user_by_id = "SELECT `name`,`email` FROM `users` WHERE `id`=:id";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$query_stmt = $this->db->prepare($fetch_user_by_id);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$query_stmt->bindValue(':id', $user_id, PDO::PARAM_INT);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$query_stmt->execute();<br>
+                    
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($query_stmt->rowCount()) :<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return $query_stmt->fetch(PDO::FETCH_ASSOC);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else :<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endif;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (PDOException $e) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return null;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }</div>
+                <p class="font1">Rest of the PHP files<br>
+                    register.php – For user registration.<br>
+                    login.php – For user login.<br>
+                    getUser.php – After login, this page is accessible with a valid token. </p>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"> register.php<br>
+                    <?php<br>
+                    header("Access-Control-Allow-Origin: *");<br>
+                    header("Access-Control-Allow-Headers: access");<br>
+                    header("Access-Control-Allow-Methods: POST");<br>
+                    header("Content-Type: application/json; charset=UTF-8");<br>
+                    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");<br>
+                    
+                    require __DIR__ . '/classes/Database.php';<br>
+                    $db_connection = new Database();<br>
+                    $conn = $db_connection->dbConnection();<br>
+                    
+                    function msg($success, $status, $message, $extra = [])<br>
+                    {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return array_merge([<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'success' => $success,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'status' => $status,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'message' => $message<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;], $extra);<br>
+                    }<br>
+                    
+                    // DATA FORM REQUEST<br>
+                    $data = json_decode(file_get_contents("php://input"));<br>
+                    $returnData = [];<br>
+                    
+                    if ($_SERVER["REQUEST_METHOD"] != "POST") :<br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0, 404, 'Page Not Found!');<br>
+                    
+                    elseif (
+                        &nbsp;&nbsp;&nbsp;&nbsp;!isset($data->name)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| !isset($data->email)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| !isset($data->password)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| empty(trim($data->name))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| empty(trim($data->email))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| empty(trim($data->password))<br>
+                    ) :<br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;$fields = ['fields' => ['name', 'email', 'password']];<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0, 422, 'Please Fill in all Required Fields!', $fields);<br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;// IF THERE ARE NO EMPTY FIELDS THEN-<br>
+                    else :<br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;$name = trim($data->name);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$email = trim($data->email);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$password = trim($data->password);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (!filter_var($email, FILTER_VALIDATE_EMAIL)) :<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0, 422, 'Invalid Email Address!');<br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;elseif (strlen($password) < 8) :<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0, 422, 'Your password must be at least 8 characters long!');<br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;elseif (strlen($name) < 3) :<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0, 422, 'Your name must be at least 3 characters long!');<br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;else :<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$check_email = "SELECT `email` FROM `users` WHERE `email`=:email";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$check_email_stmt = $conn->prepare($check_email);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$check_email_stmt->bindValue(':email', $email, PDO::PARAM_STR);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$check_email_stmt->execute();<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($check_email_stmt->rowCount()) :<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0, 422, 'This E-mail already in use!');<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else :<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$insert_query = "INSERT INTO `users`(`name`,`email`,`password`) VALUES(:name,:email,:password)";<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$insert_stmt = $conn->prepare($insert_query);<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// DATA BINDING<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$insert_stmt->bindValue(':name', htmlspecialchars(strip_tags($name)), PDO::PARAM_STR);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$insert_stmt->bindValue(':email', $email, PDO::PARAM_STR);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$insert_stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), PDO::PARAM_STR);<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$insert_stmt->execute();<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(1, 201, 'You have successfully registered.');<br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endif;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (PDOException $e) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0, 500, $e->getMessage());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endif;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;endif;<br>
+                    
+                    echo json_encode($returnData);<br>
+                    </div>
+                    <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">login.php<br>
+                        <?php<br>
+                        header("Access-Control-Allow-Origin: *");<br>
+                        header("Access-Control-Allow-Headers: access");<br>
+                        header("Access-Control-Allow-Methods: POST");<br>
+                        header("Content-Type: application/json; charset=UTF-8");<br>
+                        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");<br>
+                        
+                        require __DIR__.'/classes/Database.php';<br>
+                        require __DIR__.'/classes/JwtHandler.php';<br>
+                        
+                        function msg($success,$status,$message,$extra = []){<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return array_merge([<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'success' => $success,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'status' => $status,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'message' => $message<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;],$extra);<br>
+                        }<br>
+                        
+                        $db_connection = new Database();<br>
+                        $conn = $db_connection->dbConnection();<br>
+                        
+                        $data = json_decode(file_get_contents("php://input"));<br>
+                        $returnData = [];<br>
+                        
+                        // IF REQUEST METHOD IS NOT EQUAL TO POST<br>
+                        if($_SERVER["REQUEST_METHOD"] != "POST"):<br>
+                            $returnData = msg(0,404,'Page Not Found!');<br>
+                        
+                        // CHECKING EMPTY FIELDS<br>
+                        elseif(!isset($data->email)<br> 
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| !isset($data->password)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| empty(trim($data->email))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|| empty(trim($data->password))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;):<br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;$fields = ['fields' => ['email','password']];<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);<br>
+                        
+                        // IF THERE ARE NO EMPTY FIELDS THEN-<br>
+                        else:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;$email = trim($data->email);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;$password = trim($data->password);<br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;// CHECKING THE EMAIL FORMAT (IF INVALID FORMAT)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if(!filter_var($email, FILTER_VALIDATE_EMAIL)):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0,422,'Invalid Email Address!');<br>
+                            
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// IF PASSWORD IS LESS THAN 8 THE SHOW THE ERROR<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif(strlen($password) < 8):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0,422,'Your password must be at least 8 characters long!');<br>
+                        
+                        // THE USER IS ABLE TO PERFORM THE LOGIN ACTION<br>
+                        else:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;try{<br>
+                                    
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fetch_user_by_email = "SELECT * FROM `users` WHERE `email`=:email";<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$query_stmt = $conn->prepare($fetch_user_by_email);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$query_stmt->bindValue(':email', $email,PDO::PARAM_STR);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$query_stmt->execute();<br>
+                        
+                                    // IF THE USER IS FOUNDED BY EMAIL<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if($query_stmt->rowCount()):<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row = $query_stmt->fetch(PDO::FETCH_ASSOC);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$check_password = password_verify($password, $row['password']);<br>
+                        
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// VERIFYING THE PASSWORD (IS CORRECT OR NOT?)<br>
+                                        // IF PASSWORD IS CORRECT THEN SEND THE LOGIN TOKEN<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if($check_password):<br>
+                        
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$jwt = new JwtHandler();<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$token = $jwt->jwtEncodeData(<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'http://localhost/php_auth_api/',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array("user_id"=> $row['id'])<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+                                            
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = [<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'success' => 1,<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'message' => 'You have successfully logged in.',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'token' => $token<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ];<br>
+                        
+                                        // IF INVALID PASSWORD<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0,422,'Invalid Password!');<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endif;<br>
+                        
+                                    // IF THE USER IS NOT FOUNDED BY EMAIL THEN SHOW THE FOLLOWING ERROR<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0,422,'Invalid Email Address!');<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endif;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(PDOException $e){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$returnData = msg(0,500,$e->getMessage());<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        
+                                        &nbsp;&nbsp;&nbsp;&nbsp;endif;<br>
+                        
+                        endif;<br>
+                        
+                        echo json_encode($returnData);</div>
+                        <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">getUser.php<br>
+                            <?php<br>
+                            header("Access-Control-Allow-Origin: *");<br>
+                            header("Access-Control-Allow-Headers: access");<br>
+                            header("Access-Control-Allow-Methods: GET");<br>
+                            header("Content-Type: application/json; charset=UTF-8");<br>
+                            header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");<br>
+                            
+                            require __DIR__.'/classes/Database.php';<br>
+                            require __DIR__.'/AuthMiddleware.php';<br>
+                            
+                            $allHeaders = getallheaders();<br>
+                            $db_connection = new Database();<br>
+                            $conn = $db_connection->dbConnection();<br>
+                            $auth = new Auth($conn, $allHeaders);<br>
+                            
+                            echo json_encode($auth->isValid());</div>       
+                <hr>
+
+                <div class="step"><h3>Step 3 : Testing of the PHP login and registration API</h3></div>
+                
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">register.php<br>
+                    POST - http://localhost/php-auth-api/register.php<br>
+                    Payload (JSON)<br>
+                    {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"name":"username",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"email":"useremail@mail.com",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"password":"user password"
+                    }</div>
+                
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">login.php<br>
+                    POST - http://localhost/php-auth-api/login.php<br>
+                    Payload (JSON)<br>
+                    {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"email":"useremail@mail.com",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"password":"user password"<br>
+                    }
+                    </div>
+                <div style="height:100px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">getUser.php<br>
+                    GET - http://localhost/php-auth-api/getUser.php<br>
+                    Payload (Header)<br>
+                    Authorization - Bearer Token</div>
+                
+                
+                    
+                
+                <hr>
+                <hr>
+                <h2>Congratulations</h2>
+                <p class="font1"></a></p>
+                <div class="alert alert-success" role="alert">
+                    
+                    <p>Aww yeah, you successfully completed reading this tutorial and I hope you have not missed out any step. </p>
+                    <hr>
+                    
+                  </div>
+                  <div class="max-width-1 m-auto"><hr></div>
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>People who read this also read</h2>
+        <div class="row">
+
+       
+        <div class="home-article more-post">
+            <div class="home-article-img">
+                <img src="img/email.png" alt="article">
+            </div>
+            <div class="home-article-content font1 center">
+                <a href="smplib.html"><h3>Application of smtplib module</h3></a>
+                
+                <div>Author: Neelima Mohanty</div>
+                <span>20/01/2022 | 10:30 PM</span>
+            </div>
+        </div>
+        
+        
+    </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; TechWorm </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+    </div>
+</body>
